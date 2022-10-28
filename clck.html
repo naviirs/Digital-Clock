@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> :-)  DIGITAL CLOCK  :-)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="updateClock()">
+<div class="datetime">
+    <div class="date">
+    <span id="dayname">Times</span>
+    <span id="month">up</span>
+    <span id="year">bruhh!!</span>
+    </div>
+    <br>
+    <div class="time">
+        <span id="hours">00</span>
+        <span id="minutes">00</span>
+        <span id="seconds">00</span>
+        <br>
+        <span id="periods">pm</span>
+    </div>
+</div>
+<script type="text/javascript">
+    function updateClock(){
+        var now=new Date();
+        var hr=now.getHours();
+        var min=now.getMinutes();
+        var sec=now.getSeconds();
+        var  pr="PM";
+
+            if(hr==0){
+                hr=12;
+            }
+            if(hr>=12){
+                hr=hr-12;
+                pr="PM";
+            }
+            document.getElementById('hours').innerHTML=hr;
+            document.getElementById('minutes').innerHTML=min;
+            document.getElementById('seconds').innerHTML=sec;
+
+            setTimeout(updateClock,1000);
+
+   
+    }
+    updateClock();
+
+
+</script>
+
+
+</body>
+
+</html>
